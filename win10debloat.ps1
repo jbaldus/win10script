@@ -8,7 +8,7 @@
 #
 #	Addition: One command to rule them all, One command to find it, and One command to Run it! 
 #
-#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JJ8R4')"
+#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JTjme')"
 #
 #	Chris Titus Tech Additions:
 #
@@ -33,10 +33,10 @@ $tweaks = @(
 	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
 	"Install7Zip",
 	"InstallNotepadplusplus",
-	"InstallIrfanview",
+	#"InstallIrfanview",
 	"InstallVLC",
-	"InstallAdobe",
-	"InstallBrave",
+	#"InstallAdobe",
+	#"InstallBrave",
 	# "ChangeDefaultApps", # Removed due to issues with steam and resetting default apps
 
 	### Windows Apps
