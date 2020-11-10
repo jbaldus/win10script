@@ -141,7 +141,7 @@ Function CreateRestorePoint {
   }
 
 Function InstallFirefoxPolicies {
-    if ( -not Test-Path "C:\Program Files\Mozilla Firefox" ) {
+    if ( -not (Test-Path "C:\Program Files\Mozilla Firefox") ) {
         choco install firefox -y
     }
     New-Item -ItemType Directory -Force -Path "C:\Program Files\Mozilla Firefox\distribution" | Out-Null
