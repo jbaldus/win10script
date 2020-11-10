@@ -1,0 +1,102 @@
+{
+  "policies": {
+    "Bookmarks": [
+      {
+        "Placement": "toolbar",
+        "Title": "NC RESA Moodle",
+        "URL": "https://moodle.ncresa.org"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "Cisco NetAcad",
+        "URL": "https://netacad.com"
+      },
+      {
+        "Placement": "menu",
+        "Title": "Repl.it",
+        "URL": "https://repl.it"
+      },
+      {
+        "Placement": "menu",
+        "Title": "Scrimba",
+        "URL": "https://scrimba.com"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "Code Combat",
+        "URL": "https://codecombat.com"
+      },
+      {
+        "Placement": "toolbar",
+        "Title": "MICE",
+        "URL": "https://lms.micek12.com/login/canvas"
+      }
+    ],
+    "DNSOverHTTPS": {
+      "Enabled": false,
+      "Locked": true
+    },
+    "DefaultDownloadDirectory": "${home}/Downloads",
+    "DisableForgetButton": true,
+    "DisableMasterPasswordCreation": true,
+    "DisableSetDesktopBackground": true,
+    "DisableTelemetry": true,
+    "DisplayBookmarksToolbar": true,
+    "DontCheckDefaultBrowser": false,
+    "EnableTrackingProtection": {
+      "Cryptomining": true,
+      "Fingerprinting": true,
+      "Locked": true,
+      "Value": true
+    },
+    "ExtensionSettings": {
+      "opentabsnexttocurrent@sblask": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/open-tabs-next-to-current/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "support@lastpass.com": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/lastpass-password-manager/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "uBlock0@raymondhill.net": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "{506e023c-7f2b-40a3-8066-bc5deb40aebe}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/gesturefy/latest.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "{7be2ba16-0f1e-4d93-9ebc-5164397477a9}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/videospeed/latest.xpi",
+        "installation_mode": "normal_installed"
+      },
+      "{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/adblock-plus/latest.xpi",
+        "installation_mode": "force_installed"
+      },
+      "{ddc62400-f22d-4dd3-8b4a-05837de53c2e}": {
+        "install_url": "https://addons.mozilla.org/firefox/downloads/latest/read-aloud/latest.xpi",
+        "installation_mode": "force_installed"
+      }
+    },
+    "ExtensionUpdate": true,
+    "Homepage": {
+      "Additional": [
+        "https://moodle.ncresa.org",
+        "https://netacad.com"
+      ],
+      "StartPage": "previous-session"
+    },
+    "OfferToSaveLogins": false,
+    "OverrideFirstRunPage": "",
+    "OverridePostUpdatePage": "",
+    "PasswordManagerEnabled": false,
+    "Preferences": {
+      "browser.tabs.warnOnClose": false,
+      "places.history.enabled": true,
+      "ui.key.menuAccessKeyFocuses": true
+    },
+    "PromptForDownloadLocation": true,
+    "SearchBar": "separate"
+  }
+}
