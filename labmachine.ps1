@@ -1,7 +1,7 @@
 ##########
 # Tweaked Win10 Initial Setup Script
 #
-#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JTjme')"
+#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/Jkk2m')"
 #
 
 Function InstallChocolatey {
