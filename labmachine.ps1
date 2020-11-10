@@ -154,8 +154,8 @@ Function InstallPacketTracer {
     WaitForKey
     $PTURL = "http://10.130.37.29/PacketTracer-7.3.1-win64-setup.exe"
     Import-Module BitsTransfer
-    Start-BitsTransfer -Source $PTURL -Destination PT.exe
-    ./PT.exe
+    Start-BitsTransfer -Source $PTURL -Destination "C:\PT.exe"
+    C:\PT.exe
 }
 
 Function InstallITSoftware {
@@ -169,11 +169,11 @@ Function InstallITSoftware {
         "putty.install"
         "microsoft-windows-terminal"
         "wireshark"
-        "winpcap"
         "gimp"
         "python3"
         "adblockpluschrome"
         "ublockorigin-chrome"
+        "lastpass-chrome"
     )
     choco install $Apps -y
 
