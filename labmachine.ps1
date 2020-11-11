@@ -150,9 +150,11 @@ Function InstallFirefoxPolicies {
 }
 
 Function InstallPacketTracer {
-    Write-Output "Start file server on teacher computer"
+    $IP = Read-Host "What is the IP address of teacher computer?"
+    Write-Output "Rename PacketTracer installater to PacketTracer.exe on teacher computer"
+    Write-Output "Start file server on teacher computer with 'python -m http.server' in the directory containing PacketTracer.exe"
     WaitForKey
-    $PTURL = "http://10.130.37.29/PacketTracer-7.3.1-win64-setup.exe"
+    $PTURL = "http://$IP/PacketTracer.exe"
     Import-Module BitsTransfer
     Start-BitsTransfer -Source $PTURL -Destination "C:\PT.exe"
     C:\PT.exe
@@ -175,7 +177,9 @@ Function InstallITSoftware {
         "ublockorigin-chrome"
         "lastpass-chrome"
     )
-    choco install $Apps -y
+    foreach ($App in $Apps) {
+        choco install $App -y
+    }
 
     InstallFirefoxPolicies
     InstallPacketTracer
@@ -187,6 +191,13 @@ Function WaitForKey {
 	[Console]::ReadKey($true) | Out-Null
 }
 
+# Unpin all Taskbar icons - Note: This function has no counterpart. You have to pin the icons back manually.
+Function UnpinTaskbarIcons {
+	Write-Output "Unpinning all Taskbar icons..."
+	Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" -Name "Favorites" -Type Binary -Value ([byte[]](255))
+	Remove-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Taskband" -Name "FavoritesResolve" -ErrorAction SilentlyContinue
+}
+
 
 $tweaks = @(
     "RequireAdmin"
@@ -196,6 +207,7 @@ $tweaks = @(
     "UninstallWindowsStore"
     "DisableXboxFeatures"
     "InstallITSoftware"
+    "UnpinTaskbarIcons"
 )
 
 # Call the desired tweak functions
