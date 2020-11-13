@@ -161,6 +161,7 @@ Function InstallPacketTracer {
 }
 
 Function InstallITSoftware {
+    InstallPacketTracer
     $Apps = @(
         "notepadplusplus.install"
         "7zip"
@@ -182,7 +183,6 @@ Function InstallITSoftware {
     }
 
     InstallFirefoxPolicies
-    InstallPacketTracer
 }
 
 # Wait for key press
