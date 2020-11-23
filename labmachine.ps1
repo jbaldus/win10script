@@ -279,6 +279,7 @@ Function InstallITSoftware {
         "wireshark"
         "gimp"
         "python3"
+        "googlechrome"
         "adblockpluschrome"
         "ublockorigin-chrome"
         "lastpass-chrome"
