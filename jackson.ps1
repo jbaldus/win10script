@@ -101,28 +101,6 @@ Function DebloatAll {
     }
 }
 
-# Uninstall Windows Store
-Function UninstallWindowsStore {
-	Write-Output "Uninstalling Windows Store..."
-	Get-AppxPackage "Microsoft.DesktopAppInstaller" | Remove-AppxPackage
-	Get-AppxPackage "Microsoft.WindowsStore" | Remove-AppxPackage
-}
-
-# Disable Xbox features
-Function DisableXboxFeatures {
-	Write-Output "Disabling Xbox features..."
-	Get-AppxPackage "Microsoft.XboxApp" | Remove-AppxPackage
-	Get-AppxPackage "Microsoft.XboxIdentityProvider" | Remove-AppxPackage -ErrorAction SilentlyContinue
-	Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxPackage
-	Get-AppxPackage "Microsoft.XboxGameOverlay" | Remove-AppxPackage
-	Get-AppxPackage "Microsoft.Xbox.TCUI" | Remove-AppxPackage
-	Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_Enabled" -Type DWord -Value 0
-	If (!(Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR")) {
-		New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR" | Out-Null
-	}
-	Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR" -Name "AllowGameDVR" -Type DWord -Value 0
-}
-
 # Relaunch the script with administrator privileges
 Function RequireAdmin {
 	If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
@@ -132,11 +110,10 @@ Function RequireAdmin {
 }
 
 Function CreateRestorePoint {
-    Write-Output "Creating Restore Point incase something bad happens"
+    Write-Output "Creating Restore Point in case something bad happens"
     Enable-ComputerRestore -Drive "C:\"
     Checkpoint-Computer -Description "RestorePoint1" -RestorePointType "MODIFY_SETTINGS"
   }
-
 
 Function InstallFirefoxPolicies {
     if ( -not (Test-Path -Path "C:\Program Files\Mozilla Firefox") ) {
