@@ -150,10 +150,11 @@ Function InstallFirefoxPolicies {
 }
 
 Function InstallPacketTracer {
-    $IP = Read-Host "What is the IP address of teacher computer?"
+    #$IP = Read-Host "What is the IP address of teacher computer?"
     Write-Output "Rename PacketTracer installater to PacketTracer.exe on teacher computer"
     Write-Output "Start file server on teacher computer with 'python -m http.server' in the directory containing PacketTracer.exe"
-    WaitForKey
+    #WaitForKey
+    $IP = 10.130.37.29
     $PTURL = "http://$IP/PacketTracer.exe"
     Import-Module BitsTransfer
     Start-BitsTransfer -Source $PTURL -Destination "C:\PT.exe"
