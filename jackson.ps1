@@ -1,26 +1,8 @@
-
-
-
-
-
-
-iex(New-Object Net.WebClient).DownloadString('https://git.io/Jk6rq')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+##########
+# Tweaked Win10 Initial Setup Script
+#
+#     > iex(New-Object Net.WebClient).DownloadString('https://git.io/Jk6rq')
+#
 
 Function InstallChocolatey {
 	Write-Output "Installing Chocolatey"
@@ -280,7 +262,6 @@ Function InstallSoftware {
         "adblockpluschrome"
         "ublockorigin-chrome"
         "lastpass-chrome"
-        "zoom"
     )
     foreach ($App in $Apps) {
         choco install $App -y
@@ -305,6 +286,7 @@ Function UnpinTaskbarIcons {
 
 $tweaks = @(
     "RequireAdmin"
+    "CreateRestorePoint"
     "DisableTelemetry"
     "DisableAppSuggetions"
     "DisableActivityHistory"
