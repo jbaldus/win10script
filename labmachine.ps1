@@ -277,12 +277,13 @@ Function InstallITSoftware {
         "putty.install"
         "microsoft-windows-terminal"
         "wireshark"
-        "gimp"
+        #"gimp"
         "python3"
         "googlechrome"
         "adblockpluschrome"
         "ublockorigin-chrome"
-        "lastpass-chrome"
+        "bitwarden"
+        "firefox"
     )
     foreach ($App in $Apps) {
         choco install $App -y
@@ -319,7 +320,7 @@ $tweaks = @(
     "DisableDiagTrack"
     "InstallChocolatey"
     "DebloatAll"
-    "UninstallWindowsStore"
+#    "UninstallWindowsStore"
     "DisableXboxFeatures"
     "InstallITSoftware"
     "UnpinTaskbarIcons"
